@@ -15,6 +15,7 @@ function App() {
           <Route path='/AdminDB' element={<AdDb />} />
           <Route path='/AdminEdit' element={<AdEdit />} />
           <Route path='/home' element={<AdDb />} />
+          <Route path='/data' element={<AdEdit />} />
         </Routes>
       </Router>
     </>
