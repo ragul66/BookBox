@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -26,11 +28,15 @@ const Login = () => {
                         navigate('/home');
                     }
                     else {
-                        alert("login Failes")
+                        toast.error("login Failed🥲🥲!!", {
+                            // position: toast.POSITION.TOP_RIGHT,
+                        });
                     }
                 }
                 else {
-                    alert("Login failed due to invalid credentials")
+                    toast.error("login Failed🥲🥲!!", {
+                        // position: toast.POSITION.TOP_RIGHT,
+                    });
                 }
 
             }
@@ -39,6 +45,9 @@ const Login = () => {
             }
         } catch (err) {
             console.error(err.message);
+            toast.error("Login Failed🥲🥲!!", {
+                // position: toast.POSITION.TOP_RIGHT,
+            });
         }
     };
 
@@ -51,6 +60,7 @@ const Login = () => {
         <>
             <div>
                 <div className="lg:ml-[625px] lg:mt-56 border-2 border-gray-600 w-fit p-10 rounded-lg shadow-lg bg-gray-100 font-serif">
+                    <ToastContainer />
                     <h1 className="ml-16 text-xl font-semibold">Login</h1>
                     <form onSubmit={handleSubmission}>
                         <div className="flex flex-col w-48 space-y-3">

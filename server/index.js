@@ -113,7 +113,6 @@ app.post("/cart/:id", async (req, res) => {
     res.status(201).json(newItem);
   } catch (err) {
     console.error(err.message);
-    res.status(500)({ error: "Internal server Error" });
   }
 });
 
