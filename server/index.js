@@ -148,6 +148,18 @@ app.delete("/cart/:id", async (req, res) => {
 });
 //Cart Seesion Finished
 
+app.post("/book/:id/rating", async (req, res) => {
+  const { id } = req.params;
+  const { rating } = req.body;
+  try {
+    const updateQuery = `UPDATE books SET rating = $1 WHERE book_id = $2`;
+    await pool.query(updateQuery, [rating, id]);
+    res.status(200).send("Rating updated successfully.");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Failed to update rating.");
+  }
+});
 ////Admin Panel section
 
 app.post("/admin", async (req, res) => {

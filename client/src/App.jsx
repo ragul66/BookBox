@@ -5,7 +5,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import CategoryPage from './components/GetCategoryresult'
 import Cart from './pages/Cart'
-import Ratings from './components/Ratings'
+// import Ratings from './components/Ratings'
 // import Tamil from './pages/Tamil'
 
 
@@ -21,7 +21,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/book/:category' element={<CategoryPage />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/ratings' element={<Ratings />} />
+          {/* <Route path='/ratings' element={<Ratings />} /> */}
         </Routes>
       </Router>
     </>
